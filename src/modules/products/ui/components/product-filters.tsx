@@ -21,7 +21,7 @@ export const ProductFilters = () => {
     }
 
     const hasAnyFilters = Object.entries(filters).some(([key, value]) => {
-        if (key === 'sort') {
+        if (key === 'sort' || key === 'search') {
             return false
         }
         if (Array.isArray(value)) {

@@ -8,6 +8,11 @@ import {
 export const sortValues = ['curated', 'trending', 'hot_and_new'] as const
 
 const params = {
+    search: parseAsString
+        .withOptions({
+            clearOnDefault: true,
+        })
+        .withDefault(''),
     minPrice: parseAsString
         .withOptions({
             clearOnDefault: true,

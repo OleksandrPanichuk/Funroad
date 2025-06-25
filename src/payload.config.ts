@@ -2,11 +2,11 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import path from 'path'
 import { buildConfig } from 'payload'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
-import {vercelBlobStorage} from '@payloadcms/storage-vercel-blob'
 
 import { Orders } from '@/collections/Orders'
 import { Products } from '@/collections/Products'
@@ -67,9 +67,9 @@ export default buildConfig({
         vercelBlobStorage({
             enabled: true,
             collections: {
-                media: true
+                media: true,
             },
-            token: process.env.BLOB_READ_WRITE_TOKEN
-        })
+            token: process.env.BLOB_READ_WRITE_TOKEN,
+        }),
     ],
 })
